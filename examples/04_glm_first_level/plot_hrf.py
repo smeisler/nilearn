@@ -3,18 +3,18 @@ Example of MRI response functions
 =================================
 
 Within this example we are going to plot the hemodynamic response function
-(HRF) model in SPM together with the HRF shape proposed by G.Glover, as well as
+(:term:`HRF`) model in :term:`SPM` together with the :term:`HRF` shape proposed by G.Glover, as well as
 their time and dispersion derivatives.
 We also illustrate how users can input a custom response function,
 which can for instance be useful when dealing with non human primate data
 acquired using a contrast agent. In our case, we input a custom response function
 for MION, a common agent used to enhance contrast on MRI images of monkeys.
 
-The HRF is the filter which couples neural responses to the metabolic-related
-changes in the MRI signal. HRF models are simply phenomenological.
+The :term:`HRF` is the filter which couples neural responses to the metabolic-related
+changes in the MRI signal. :term:`HRF` models are simply phenomenological.
 
-In current analysis frameworks, the choice of HRF model is essentially left to
-the user. Fortunately, using the SPM or Glover model does not make a huge
+In current analysis frameworks, the choice of :term:`HRF` model is essentially left to
+the user. Fortunately, using the :term:`SPM` or Glover model does not make a huge
 difference. Adding derivatives should be considered whenever timing
 information has some degree of uncertainty, and is actually useful to detect
 timing issues.
@@ -53,8 +53,8 @@ def mion_response_function(tr, oversampling=50, time_length=32.0, onset=0.0):
     time_stamps -= onset
 
     delay = 5
-    scale = 4
-    response_function = gamma.pdf(time_stamps, delay, scale=scale)
+    
+    response_function = gamma.pdf(time_stamps, delay, scale=4)
     response_function /= response_function.sum()
 
     return response_function
