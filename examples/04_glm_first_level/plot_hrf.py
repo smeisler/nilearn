@@ -24,7 +24,7 @@ This example requires matplotlib and scipy.
 
 #########################################################################
 # Define stimulus parameters and response models
-# ----------------------------------------
+# ----------------------------------------------
 #
 # To get an impulse response, we simulate a single event occurring at time t=0,
 # with duration 1s.
@@ -71,7 +71,7 @@ rf_models = [
 
 #########################################################################
 # Sample and plot response functions
-# --------------
+# ----------------------------------
 
 import matplotlib.pyplot as plt
 from nilearn.glm.first_level import compute_regressor
