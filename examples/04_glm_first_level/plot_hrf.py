@@ -8,7 +8,7 @@ their time and dispersion derivatives.
 We also illustrate how users can input a custom response function,
 which can for instance be useful when dealing with non human primate data
 acquired using a contrast agent. In our case, we input a custom response function
-for MION, a common agent used to enhance contrast on MRI images of monkeys.
+for MION, a common `agent <https://en.wikipedia.org/wiki/MRI_contrast_agent>`_ used to enhance contrast on MRI images of monkeys.
 
 The :term:`HRF` is the filter which couples neural responses to the metabolic-related
 changes in the MRI signal. :term:`HRF` models are simply phenomenological.
@@ -53,7 +53,7 @@ def mion_response_function(tr, oversampling=50, time_length=32.0, onset=0.0):
     time_stamps -= onset
 
     delay = 5
-    
+
     response_function = gamma.pdf(time_stamps, delay, scale=4)
     response_function /= response_function.sum()
 
